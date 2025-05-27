@@ -5,22 +5,22 @@
 #include <vector>
 
 class PMTree {
-public:
-    struct Node {
-        char val;
-        std::vector<Node*> children;
-        explicit Node(char v) : val(v) {}
-        ~Node() { for (auto c : children) delete c; }
-    };
+ public:
+  struct Node {
+    char val;
+    std::vector<Node*> children;
+    explicit Node(char v) : val(v) {}
+    ~Node() { for (auto c : children) delete c; }
+  };
 
-    explicit PMTree(const std::vector<char>& elems);
-    ~PMTree();
+  explicit PMTree(const std::vector<char>& elems);
+  ~PMTree();
 
-    Node* getRoot() const { return root_; }
+  Node* getRoot() const { return root_; }
 
-private:
-    Node* root_;
-    void buildTree(Node* node, std::vector<char> remaining);
+ private:
+  Node* root_;
+  void buildTree(Node* node, std::vector<char> remaining);
 };
 
 std::vector<std::vector<char>> getAllPerms(const PMTree& tree);
