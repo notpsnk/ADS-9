@@ -45,7 +45,7 @@ void dfs(PMTree::Node* node, std::vector<char>& path,
   }
   if (node->val != '\0') path.pop_back();
 }
-}
+} // namespace
 
 std::vector<std::vector<char>> getAllPerms(const PMTree& tree) {
   std::vector<std::vector<char>> result;
